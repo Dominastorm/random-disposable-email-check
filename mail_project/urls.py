@@ -5,5 +5,6 @@ from .views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth', include('rest_framework.urls')),
-    path('generate_email/', GenerateMailView.as_view(), name='generate_email'),
+    path('generate-email/', GenerateMailView.as_view(), name='generate-email'),
+    path('get-inbox/<str:email>', GetInboxView.as_view(), name='get-inbox'),
 ]
